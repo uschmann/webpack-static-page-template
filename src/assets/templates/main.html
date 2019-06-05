@@ -7,10 +7,13 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <%= require('html-loader!ejs-html-loader!./navigation.html') %>
     <%= require('html-loader!ejs-html-loader!./pages/' + htmlWebpackPlugin.options.page) %>
     <%= require('html-loader!ejs-html-loader!./footer.html') %>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
 </body>
 </html>
