@@ -17,41 +17,47 @@ const pageOptions = {
 }
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
-  },
-     devServer: {
-         contentBase: './dist'
-       },
-  module: {
-      rules: [
-          {
-              test: /\.scss$/,
-              use: [
-                  MiniCssExtractPlugin.loader,
-                  'css-loader',
-                  'sass-loader'
-              ]
-          }
-      ]
-  },
-  plugins: [
-      /*****************************************************
-       * Pages
-       *****************************************************/
-      new HtmlWebpackPlugin(Object.assign(pageOptions, { 
-        filename: 'index.html',
-        title: 'Home',
-        page: 'index.html'
-      })),
-      new HtmlWebpackPlugin(Object.assign(pageOptions, { 
-          filename: 'about.html',
-          title: 'About',
-          page: 'about.html'
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+    },
+    devServer: {
+        contentBase: './dist'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
+            }
+        ]
+    },
+    plugins: [
+        /*****************************************************
+         * Pages
+         *****************************************************/
+        new HtmlWebpackPlugin(Object.assign(pageOptions, {
+            filename: 'index.html',
+            title: 'Home',
+            page: 'index.html'
+        })),
+        new HtmlWebpackPlugin(Object.assign(pageOptions, {
+            filename: 'about.html',
+            title: 'About',
+            page: 'about.html'
         })),
 
         new MiniCssExtractPlugin()
-  ]
+    ]
 }

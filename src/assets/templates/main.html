@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <%= require('html-loader!./navigation.html') %>
-        <%= require('html-loader!./pages/' + htmlWebpackPlugin.options.page) %>
-    </div>
+    <%= require('html-loader!ejs-html-loader!./navigation.html') %>
+    <%= require('html-loader!ejs-html-loader!./pages/' + htmlWebpackPlugin.options.page) %>
+    <%= require('html-loader!ejs-html-loader!./footer.html') %>
 </body>
 </html>

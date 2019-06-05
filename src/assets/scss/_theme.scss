@@ -1,0 +1,29 @@
+
+/********************************************************************
+ * .navbar
+ ********************************************************************/
+.navbar {
+  background: transparent;
+  transition: background 0.2s;
+
+  &.scrolled {
+    background: #123456;
+  }
+}
+
+/********************************************************************
+ * .btn
+ ********************************************************************/
+.btn {
+  border: 1px solid #FFF !important;
+  border-radius: 0px;
+  color: #FFF;
+  transition: all 0.1s;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #eee;
+    border: 1px solid #FFF;
+    transform: scale(0.98);
+  }
+}
